@@ -5,15 +5,17 @@ export const rocketSlice = createSlice({
   initialState: { rocketsData: [] },
   reducers: {
     initRockets(state, action) {
-      state.rocketsData = action.payload.map(
-        ({
-          id, rocket_name, description, flickr_images,
-        }) => ({
-          id,
-          rocket_name,
-          description,
-          flickr_images,
-        }),
+      state.rocketsData.push(
+        ...action.payload.map(
+          ({
+            id, rocket_name, description, flickr_images,
+          }) => ({
+            id,
+            rocket_name,
+            description,
+            flickr_images,
+          }),
+        ),
       );
     },
   },
