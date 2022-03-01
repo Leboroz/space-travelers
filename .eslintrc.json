@@ -19,13 +19,7 @@
     "react/react-in-jsx-scope": "off",
     "import/no-unresolved": "off",
     "no-shadow": "off",
-    "no-param-reassign": [
-      "error",
-      {
-        "props": true,
-        "ignorePropertyModificationsFor": ["state"]
-      }
-    ]
+    "no-param-reassign": "off"
   },
   "ignorePatterns": ["dist/", "build/"]
 }
