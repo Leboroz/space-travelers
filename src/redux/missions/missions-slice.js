@@ -12,15 +12,23 @@ const missionsSlice = createSlice({
     },
     isJoined(state, action) {
       const id = action.payload;
-      state.missionsData.map((mission) => {
+      state.missionsData.forEach((mission) => {
         if (mission.mission_id === id) {
           mission.reserved = true;
+        }
+      });
+    },
+    isLeft(state, action) {
+      const id = action.payload;
+      state.missionsData.forEach((mission) => {
+        if (mission.mission_id === id) {
+          mission.reserved = false;
         }
       });
     },
   },
 });
 
-export const missionActions = missionsSlice.actions;
+export const { getMissions, isJoined, isLeft } = missionsSlice.actions;
 
-export default missionsSlice;
+export default missionsSlice.reducer;

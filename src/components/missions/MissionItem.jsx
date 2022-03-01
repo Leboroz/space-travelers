@@ -2,13 +2,25 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Button, Badge } from 'react-bootstrap';
-import { missionActions } from '../../redux/missions/missions-slice';
+import { isJoined, isLeft } from '../../redux/missions/missions-slice';
 
-const MissionItem = ({ id, name, description, status }) => {
+const MissionItem = (props) => {
+  // prettier-ignore
+  const {
+    id,
+    name,
+    description,
+    status
+  } = props;
+
   const dispatch = useDispatch();
 
-  const clickHandler = () => {
-    dispatch(missionActions.isJoined(id));
+  const joinClickHandler = () => {
+    dispatch(isJoined(id));
+  };
+
+  const leaveClickHandler = () => {
+    dispatch(isLeft(id));
   };
 
   return (
@@ -24,11 +36,13 @@ const MissionItem = ({ id, name, description, status }) => {
       </td>
       <td className="text-center" style={{ width: '15%' }}>
         {!status ? (
-          <Button variant="outline-primary" onClick={clickHandler}>
+          <Button variant="outline-primary" onClick={joinClickHandler}>
             Join Mission
           </Button>
         ) : (
-          <Button variant="outline-danger">Leave Mission</Button>
+          <Button variant="outline-danger" onClick={leaveClickHandler}>
+            Leave Mission
+          </Button>
         )}
       </td>
     </tr>
@@ -39,7 +53,7 @@ MissionItem.propTypes = {
   id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-  status: PropTypes.bool,
+  status: PropTypes.bool.isRequired,
 };
 
 export default MissionItem;

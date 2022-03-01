@@ -3,7 +3,7 @@ import missionsSlice from './missions/missions-slice';
 
 const store = configureStore({
   reducer: {
-    missions: missionsSlice.reducer,
+    missions: missionsSlice,
   },
 });
 

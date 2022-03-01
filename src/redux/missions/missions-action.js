@@ -1,4 +1,4 @@
-import { missionActions } from './missions-slice';
+import { getMissions } from './missions-slice';
 
 const getMissionsFromApi = () => async (dispatch) => {
   const response = await fetch('https://api.spacexdata.com/v3/missions');
@@ -14,7 +14,7 @@ const getMissionsFromApi = () => async (dispatch) => {
     });
   });
 
-  dispatch(missionActions.getMissions(missionsData));
+  dispatch(getMissions(missionsData));
 };
 
 export default getMissionsFromApi;
