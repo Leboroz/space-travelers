@@ -2,33 +2,32 @@
   "name": "space-travelers",
   "version": "0.1.0",
   "private": true,
-  "dependencies": {
-    "@testing-library/jest-dom": "^5.16.2",
-    "@testing-library/react": "^12.1.3",
-    "@testing-library/user-event": "^13.5.0",
-    "bootstrap": "^5.1.3",
-    "react": "^17.0.2",
-    "react-bootstrap": "^2.1.2",
-    "react-dom": "^17.0.2",
-    "react-redux": "^7.2.6",
-    "react-router-bootstrap": "^0.26.0",
-    "react-router-dom": "^6.2.1",
-    "react-scripts": "5.0.0",
-    "redux-logger": "^3.0.6",
-    "sort-package-json": "^1.54.0",
-    "web-vitals": "^2.1.4"
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "keywords": [
+    "project",
+    "Leboroz",
+    "bondok6",
+    "space",
+    "travelers",
+    "react",
+    "redux",
+    "react-bootstrap"
+  ],
+  "bugs": {
+    "url": "https://github.com/Leboroz/space-travelers/issues"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Leboroz/space-travelers.git"
+  },
+  "license": "MIT",
+  "author": "Leonardo Albornoz & Kyrillos Hany",
+  "main": "index.js",
   "scripts": {
-    "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+    "eject": "react-scripts eject",
+    "start": "react-scripts start",
+    "test": "react-scripts test"
   },
   "browserslist": {
     "production": [
@@ -42,26 +41,29 @@
       "last 1 safari version"
     ]
   },
-  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
-  "main": "index.js",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Leboroz/space-travelers.git"
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
   },
-  "keywords": [
-    "project",
-    "Leboroz",
-    "bondok6",
-    "space",
-    "travelers",
-    "react",
-    "redux",
-    "react-bootstrap"
-  ],
-  "author": "Leonardo Albornoz & Kyrillos Hany",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/Leboroz/space-travelers/issues"
+  "dependencies": {
+    "@reduxjs/toolkit": "^1.8.0",
+    "@testing-library/jest-dom": "^5.16.2",
+    "@testing-library/react": "^12.1.3",
+    "@testing-library/user-event": "^13.5.0",
+    "bootstrap": "^5.1.3",
+    "prop-types": "^15.8.1",
+    "react": "^17.0.2",
+    "react-bootstrap": "^2.1.2",
+    "react-dom": "^17.0.2",
+    "react-redux": "^7.2.6",
+    "react-router-bootstrap": "^0.26.0",
+    "react-router-dom": "^6.2.1",
+    "react-scripts": "5.0.0",
+    "redux-logger": "^3.0.6",
+    "sort-package-json": "^1.54.0",
+    "web-vitals": "^2.1.4"
   },
   "devDependencies": {
     "@babel/core": "^7.17.5",
