@@ -1,11 +1,20 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 export const rocketSlice = createSlice({
-  name: 'Rockets',
-  initialState: {},
+  name: 'rockets',
+  initialState: { rocketsData: [] },
   reducers: {
     initRockets(state, action) {
-      state = action.payload;
+      state.rocketsData = action.payload.map(
+        ({
+          id, rocket_name, description, flickr_images,
+        }) => ({
+          id,
+          rocket_name,
+          description,
+          flickr_images,
+        }),
+      );
     },
   },
 });
