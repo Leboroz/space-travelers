@@ -14,15 +14,7 @@ const missionsSlice = createSlice({
       const id = action.payload;
       state.missionsData.forEach((mission) => {
         if (mission.mission_id === id) {
-          mission.reserved = true;
-        }
-      });
-    },
-    isLeft(state, action) {
-      const id = action.payload;
-      state.missionsData.forEach((mission) => {
-        if (mission.mission_id === id) {
-          mission.reserved = false;
+          mission.reserved = !mission.reserved;
         }
       });
     },
