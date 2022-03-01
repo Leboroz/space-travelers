@@ -5,7 +5,7 @@ import MissionItem from './MissionItem';
 import getMissionsFromApi from '../../redux/missions/missions-action';
 
 const MissionsList = () => {
-  const missionsData = useSelector((state) => state.missions.missions);
+  const missionsItem = useSelector((state) => state.missions.missionsData);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -23,12 +23,12 @@ const MissionsList = () => {
         </tr>
       </thead>
       <tbody>
-        {missionsData.map((mission) => (
+        {missionsItem.map((item) => (
           <MissionItem
-            key={mission.mission_id}
-            id={mission.mission_id}
-            name={mission.mission_name}
-            description={mission.mission_description}
+            key={item.mission_id}
+            id={item.mission_id}
+            name={item.mission_name}
+            description={item.mission_description}
           />
         ))}
       </tbody>

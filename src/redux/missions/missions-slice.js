@@ -3,12 +3,12 @@ import { createSlice } from '@reduxjs/toolkit';
 const missionsSlice = createSlice({
   name: 'missions',
   initialState: {
-    missions: [],
+    missionsData: [],
   },
   reducers: {
     getMissions(state, action) {
-      const missionsData = action.payload;
-      state.missions.push(...missionsData);
+      const data = action.payload;
+      state.missionsData.push(...data);
     },
   },
 });
