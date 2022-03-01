@@ -16,8 +16,11 @@ const MissionItem = ({ id, name, description, status }) => {
       <td style={{ width: '10%' }}>{name}</td>
       <td style={{ width: '60%' }}>{description}</td>
       <td className="text-center" style={{ width: '15%' }}>
-        <Badge bg="secondary">Not A Member</Badge>
-        {/* <Badge bg="primary">Active Member</Badge> */}
+        {!status ? (
+          <Badge bg="secondary">Not A Member</Badge>
+        ) : (
+          <Badge bg="primary">Active Member</Badge>
+        )}
       </td>
       <td className="text-center" style={{ width: '15%' }}>
         {!status ? (
