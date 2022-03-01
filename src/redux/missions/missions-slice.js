@@ -10,6 +10,14 @@ const missionsSlice = createSlice({
       const data = action.payload;
       state.missionsData.push(...data);
     },
+    isJoined(state, action) {
+      const id = action.payload;
+      state.missionsData.map((mission) => {
+        if (mission.mission_id === id) {
+          mission.reserved = true;
+        }
+      });
+    },
   },
 });
 
