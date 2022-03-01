@@ -1,6 +1,13 @@
 import { Button, Card } from 'react-bootstrap';
+import { useDispatch } from 'react-redux';
+import { bookARocketOrCancel } from '../../redux/rockets/rockets';
 const RocketCard = ({ props }) => {
-  const { flickr_images, description, rocket_name } = props;
+  const { id, flickr_images, description, rocket_name, reserved } = props;
+  const dispatch = useDispatch();
+
+  const handleClick = () => {
+    dispatch(bookARocketOrCancel(id));
+  };
   return (
     <Card>
       <div className="row">
@@ -13,7 +20,12 @@ const RocketCard = ({ props }) => {
             <Card.Text style={{ maxHeight: '221px', overflow: 'auto' }}>
               {description}
             </Card.Text>
-            <Button variant="primary">Reserve Rocket</Button>
+            <Button
+              onClick={handleClick}
+              variant={reserved ? 'outline-danger' : 'primary'}
+            >
+              {reserved ? 'Cancel Reservation' : 'Reserve Rocket'}
+            </Button>
           </Card.Body>
         </div>
       </div>
