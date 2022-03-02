@@ -20,6 +20,9 @@ const MainHeader = () => (
         <LinkContainer to="/missions" style={{ cursor: 'pointer' }}>
           <span className="nav-link fs-5">Missions</span>
         </LinkContainer>
+        <LinkContainer to="/profile" style={{ cursor: 'pointer' }}>
+          <span className="nav-link fs-5">My Profile</span>
+        </LinkContainer>
       </Nav>
     </Container>
   </Navbar>

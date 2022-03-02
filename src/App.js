@@ -5,6 +5,7 @@ import initState from './redux/rockets/rocketsAPI';
 import MainHeader from './components/MainHeader';
 import MissionsPage from './pages/MissionsPage';
 import RocketsPage from './pages/RocketsPage';
+import ProfilePage from './pages/ProfilePage';
 
 function App() {
   const dispatch = useDispatch();
@@ -24,6 +25,7 @@ function App() {
         <Routes>
           <Route path="/" element={<RocketsPage state={state} />} />
           <Route path="/missions" element={<MissionsPage />} />
+          <Route path="/profile" element={<ProfilePage />} />
         </Routes>
       </main>
     </>
