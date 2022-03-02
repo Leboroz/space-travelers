@@ -19,7 +19,8 @@
     "react/react-in-jsx-scope": "off",
     "import/no-unresolved": "off",
     "no-shadow": "off",
-    "no-param-reassign": "off"
+    "no-param-reassign": "off",
+    "camelcase": "off"
   },
   "ignorePatterns": ["dist/", "build/"]
 }
