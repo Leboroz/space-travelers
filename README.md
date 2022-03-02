@@ -1,56 +1,50 @@
-![](https://img.shields.io/badge/Microverse-blueviolet)
+# Space Travelers
 
-# Project Name
+> #### A web application for a company that provides commercial and scientific space travel services. The application allows users to book rockets and join selected space missions using real live data from the SpaceX API.
 
-> Description the project.
-
+https://user-images.githubusercontent.com/45231276/156411396-0894607b-88a9-4687-99c1-78663e438ebf.mp4
 
 ## Built With
 
-- Major languages
-- Frameworks
-- Technologies used
+- React.js
+- Redux (@redux/toolkit)
+- React-Bootstrap
 
-## Live Demo (if available)
+## Additional Used
 
-[Live Demo Link](https://livedemo.com)
+- Api
+- KanbanBoard
+- Linters
+- Gitflow
+- npm
 
+## Live Demo 🌐
+
+### [Space Travelers Link](https://space-travelers.herokuapp.com/)
 
 ## Getting Started
 
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
-
-
 To get a local copy up and running follow these simple example steps.
 
-### Prerequisites
+`git clone git@github.com:Leboroz/space-travelers.git `
 
-### Setup
+Then `cd space-travelers`
 
-### Install
+Then `npm install` to install packages
 
-### Usage
-
-### Run tests
-
-### Deployment
-
-
+Finally `npm start`
 
 ## Authors
 
-👤 **Author1**
+👤 **Leonardo Albornoz**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@Leboroz](https://github.com/Leboroz)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/leonardo-albornoz-216784198/)
 
-👤 **Author2**
+👤 **Kyrillos Hany**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@Bondok6](https://github.com/Bondok6)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/kyrillos-hany/)
 
 ## 🤝 Contributing
 
@@ -61,12 +55,6 @@ Feel free to check the [issues page](../../issues/).
 ## Show your support
 
 Give a ⭐️ if you like this project!
-
-## Acknowledgments
-
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
 
 ## 📝 License
 
