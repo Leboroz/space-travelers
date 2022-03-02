@@ -4,11 +4,15 @@ import { useDispatch, useSelector } from 'react-redux';
 import MissionItem from './MissionItem';
 import getMissionsFromApi from '../../redux/missions/missions-action';
 
+let flag = true;
+
 const MissionsList = () => {
   const missionsItem = useSelector((state) => state.missions.missionsData);
   const dispatch = useDispatch();
 
   useEffect(() => {
+    if (!flag) return;
+    flag = false;
     dispatch(getMissionsFromApi());
   }, [dispatch]);
 
