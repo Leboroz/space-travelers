@@ -14,13 +14,19 @@ export const rocketSlice = createSlice({
             rocket_name,
             description,
             flickr_images,
+            reserved: false,
           }),
         ),
       );
     },
+    bookARocketOrCancel(state, action) {
+      state.rocketsData = state.rocketsData.map((rocket) => (rocket.id === action.payload
+        ? { ...rocket, reserved: !rocket.reserved }
+        : rocket));
+    },
   },
 });
 
-export const { initRockets } = rocketSlice.actions;
+export const { initRockets, bookARocketOrCancel } = rocketSlice.actions;
 
 export default rocketSlice.reducer;
