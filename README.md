@@ -4,7 +4,6 @@
 
 https://user-images.githubusercontent.com/45231276/156411396-0894607b-88a9-4687-99c1-78663e438ebf.mp4
 
-
 ## Built With
 
 - React.js
@@ -21,7 +20,7 @@ https://user-images.githubusercontent.com/45231276/156411396-0894607b-88a9-4687-
 
 ## Live Demo 🌐
 
-### [Space Travelers Link]()
+### [Space Travelers Link](https://space-travelers.herokuapp.com/)
 
 ## Getting Started
 
@@ -56,7 +55,6 @@ Feel free to check the [issues page](../../issues/).
 ## Show your support
 
 Give a ⭐️ if you like this project!
-
 
 ## 📝 License
 
