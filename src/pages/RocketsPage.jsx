@@ -1,23 +1,19 @@
 import React, { useState } from 'react';
-import Rockets from '../components/rockets/Rockets';
 import { useEffect } from 'react';
+import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
+import Rockets from '../components/rockets/Rockets';
+import initState from '../redux/rockets/rocketsAPI';
 
 const RocketsPage = () => {
   const dispatch = useDispatch();
-  useEffect(async () => {
-    dispatch();
-  }, []);
+  const state = useSelector((state) => state.rockets.rocketsData);
 
-  return (
-    <p>
-      {
-        <pre>
-          <code>{JSON.stringify(api, null, '\t')}</code>
-        </pre>
-      }
-    </p>
-  );
+  useEffect(() => {
+    dispatch(initState());
+  }, [dispatch]);
+
+  return <Rockets list={state} />;
 };
 
 export default RocketsPage;
