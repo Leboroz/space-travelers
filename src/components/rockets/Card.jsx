@@ -1,4 +1,4 @@
-import { Button, Card } from 'react-bootstrap';
+import { Badge, Button, Card } from 'react-bootstrap';
 import { useDispatch } from 'react-redux';
 import { bookARocketOrCancel } from '../../redux/rockets/rockets';
 const RocketCard = ({ props }) => {
@@ -16,7 +16,9 @@ const RocketCard = ({ props }) => {
         </div>
         <div className="col-lg-8 col-xl-9">
           <Card.Body>
-            <Card.Title>{rocket_name}</Card.Title>
+            <Card.Title>
+              {reserved ? <Badge bg="info">Reserved</Badge> : ''} {rocket_name}
+            </Card.Title>
             <Card.Text style={{ maxHeight: '221px', overflow: 'auto' }}>
               {description}
             </Card.Text>
