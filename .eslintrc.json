@@ -19,19 +19,8 @@
     "react/react-in-jsx-scope": "off",
     "import/no-unresolved": "off",
     "no-shadow": "off",
-<<<<<<< HEAD
     "no-param-reassign": "off",
     "camelcase": "off"
-=======
-    "camelcase": "off",
-    "no-param-reassign": [
-      "error",
-      {
-        "props": true,
-        "ignorePropertyModificationsFor": ["state"]
-      }
-    ]
->>>>>>> feature/rocket-booking
   },
   "ignorePatterns": ["dist/", "build/"]
 }

@@ -1,18 +1,10 @@
-import { useEffect } from 'react';
-import { useSelector } from 'react-redux';
-import { useDispatch } from 'react-redux';
+import PropTypes from 'prop-types';
 import Rockets from '../components/rockets/Rockets';
-import initState from '../redux/rockets/rocketsAPI';
 
-const RocketsPage = () => {
-  const dispatch = useDispatch();
-  const state = useSelector((state) => state.rockets.rocketsData);
+const RocketsPage = ({ state }) => <Rockets list={state} />;
 
-  useEffect(() => {
-    dispatch(initState());
-  }, [dispatch]);
-
-  return <Rockets list={state} />;
+RocketsPage.propTypes = {
+  state: PropTypes.arrayOf.isRequired,
 };
 
 export default RocketsPage;

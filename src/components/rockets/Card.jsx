@@ -1,8 +1,18 @@
 import { Badge, Button, Card } from 'react-bootstrap';
 import { useDispatch } from 'react-redux';
+import PropTypes from 'prop-types';
 import { bookARocketOrCancel } from '../../redux/rockets/rockets';
+
 const RocketCard = ({ props }) => {
-  const { id, flickr_images, description, rocket_name, reserved } = props;
+  // prettier-ignore
+  const {
+    id,
+    flickr_images,
+    description,
+    rocket_name,
+    reserved,
+  } = props;
+
   const dispatch = useDispatch();
 
   const handleClick = () => {
@@ -17,7 +27,8 @@ const RocketCard = ({ props }) => {
         <div className="col-lg-8 col-xl-9">
           <Card.Body>
             <Card.Title>
-              {reserved ? <Badge bg="info">Reserved</Badge> : ''} {rocket_name}
+              {reserved && <Badge bg="info">Reserved</Badge>}
+              {rocket_name}
             </Card.Title>
             <Card.Text style={{ maxHeight: '221px', overflow: 'auto' }}>
               {description}
@@ -33,6 +44,15 @@ const RocketCard = ({ props }) => {
       </div>
     </Card>
   );
+};
+
+RocketCard.propTypes = {
+  props: PropTypes.objectOf.isRequired,
+  id: PropTypes.string.isRequired,
+  flickr_images: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  rocket_name: PropTypes.string.isRequired,
+  reserved: PropTypes.bool.isRequired,
 };
 
 export default RocketCard;
