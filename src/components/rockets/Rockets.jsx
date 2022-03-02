@@ -12,7 +12,7 @@ const Rockets = ({ list }) => (
 );
 
 Rockets.propTypes = {
-  list: PropTypes.arrayOf.isRequired,
+  list: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
 export default Rockets;

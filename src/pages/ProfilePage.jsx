@@ -8,16 +8,16 @@ const ProfilePage = () => {
   const dispatch = useDispatch();
   const { missions, rockets } = state;
 
+  const { missionsData } = missions;
+
   useEffect(() => {
     dispatch(filterReservedRockets());
   }, []);
 
   const reservedRockets = rockets.filtered;
 
-  const [missonsData] = missions;
-
   const getMissions = () => {
-    const joinedMissions = missonsData.filter((mission) => mission.reserved);
+    const joinedMissions = missionsData.filter((mission) => mission.reserved);
 
     if (joinedMissions.length > 0) {
       return joinedMissions.map((mission) => (
@@ -37,10 +37,10 @@ const ProfilePage = () => {
           {
             // prettier-ignore
             reservedRockets && reservedRockets.map((rocket) => (
-                <ListGroup.Item key={rocket.id}>
-                  {rocket.rocket_name}
-                </ListGroup.Item>
-              ))
+              <ListGroup.Item key={rocket.id}>
+                {rocket.rocket_name}
+              </ListGroup.Item>
+            ))
           }
         </ListGroup>
       </Col>

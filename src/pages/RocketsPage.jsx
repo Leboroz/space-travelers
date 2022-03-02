@@ -4,7 +4,7 @@ import Rockets from '../components/rockets/Rockets';
 const RocketsPage = ({ state }) => <Rockets list={state} />;
 
 RocketsPage.propTypes = {
-  state: PropTypes.arrayOf.isRequired,
+  state: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
 export default RocketsPage;
