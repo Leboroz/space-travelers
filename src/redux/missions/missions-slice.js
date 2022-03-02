@@ -10,9 +10,17 @@ const missionsSlice = createSlice({
       const data = action.payload;
       state.missionsData.push(...data);
     },
+    isJoined(state, action) {
+      const id = action.payload;
+      state.missionsData.forEach((mission) => {
+        if (mission.mission_id === id) {
+          mission.reserved = !mission.reserved;
+        }
+      });
+    },
   },
 });
 
-export const missionActions = missionsSlice.actions;
+export const { getMissions, isJoined, isLeft } = missionsSlice.actions;
 
-export default missionsSlice;
+export default missionsSlice.reducer;

@@ -29,6 +29,7 @@ const MissionsList = () => {
             id={item.mission_id}
             name={item.mission_name}
             description={item.mission_description}
+            status={item.reserved}
           />
         ))}
       </tbody>
