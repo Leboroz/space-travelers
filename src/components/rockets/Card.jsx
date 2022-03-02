@@ -49,17 +49,23 @@ const RocketCard = ({ props }) => {
 
 RocketCard.defaultProps = {
   props: {},
-  id: '',
-  flickr_images: '',
+  id: 0,
+  flickr_images: [],
   description: '',
   rocket_name: '',
   reserved: false,
 };
 
 RocketCard.propTypes = {
-  props: PropTypes.objectOf(PropTypes),
-  id: PropTypes.string,
-  flickr_images: PropTypes.string,
+  props: PropTypes.shape({
+    id: PropTypes.number,
+    flickr_images: PropTypes.arrayOf(PropTypes.string),
+    description: PropTypes.string,
+    rocket_name: PropTypes.string,
+    reserved: PropTypes.bool,
+  }),
+  id: PropTypes.number,
+  flickr_images: PropTypes.arrayOf(PropTypes.string),
   description: PropTypes.string,
   rocket_name: PropTypes.string,
   reserved: PropTypes.bool,

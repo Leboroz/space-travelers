@@ -11,8 +11,18 @@ const Rockets = ({ list }) => (
   </div>
 );
 
+// prettier-ignore
+
 Rockets.propTypes = {
-  list: PropTypes.arrayOf(PropTypes.string).isRequired,
+  list: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number,
+      flickr_images: PropTypes.arrayOf(PropTypes.string),
+      description: PropTypes.string,
+      rocket_name: PropTypes.string,
+      reserved: PropTypes.bool,
+    }),
+  ).isRequired,
 };
 
 export default Rockets;
