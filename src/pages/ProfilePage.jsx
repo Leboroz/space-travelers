@@ -30,28 +30,26 @@ const ProfilePage = () => {
   };
 
   return (
-    <>
-      <Row>
-        <Col>
-          <h2>My Rockets</h2>
-          <ListGroup>
-            {
-              // prettier-ignore
-              reservedRockets && reservedRockets.map((rocket) => (
+    <Row>
+      <Col>
+        <h2>My Rockets</h2>
+        <ListGroup>
+          {
+            // prettier-ignore
+            reservedRockets && reservedRockets.map((rocket) => (
                 <ListGroup.Item key={rocket.id}>
                   {rocket.rocket_name}
                 </ListGroup.Item>
               ))
-            }
-          </ListGroup>
-        </Col>
+          }
+        </ListGroup>
+      </Col>
 
-        <Col>
-          <h2> My Missions </h2>
-          <ListGroup>{getMissions()}</ListGroup>
-        </Col>
-      </Row>
-    </>
+      <Col>
+        <h2> My Missions </h2>
+        <ListGroup>{getMissions()}</ListGroup>
+      </Col>
+    </Row>
   );
 };
 
