@@ -1,25 +1,32 @@
-import React from 'react';
-import { Row, Col } from 'react-bootstrap';
-import { useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { Row, Col, ListGroup } from 'react-bootstrap';
+import { filterReservedRockets } from '../redux/rockets/rockets';
 
 const ProfilePage = () => {
   const state = useSelector((state) => state);
-
+  const dispatch = useDispatch();
   const { missions, rockets } = state;
 
-  console.log(missions, rockets);
+  useEffect(() => {
+    dispatch(filterReservedRockets());
+  }, []);
+
+  const reservedRockets = rockets.filtered;
+
+  const [missonsData] = missions;
 
   const getMissions = () => {
-    const joinedMissions = missions.missionsData.filter(
-      (mission) => mission.reserved
-    );
+    const joinedMissions = missonsData.filter((mission) => mission.reserved);
 
-    if (joinedMissions.length === 0) {
-      return <li>There is No Missions</li>;
+    if (joinedMissions.length > 0) {
+      return joinedMissions.map((mission) => (
+        <ListGroup.Item key={mission.mission_id}>
+          {mission.mission_name}
+        </ListGroup.Item>
+      ));
     }
-    return joinedMissions.map((mission) => (
-      <li key={mission.mission_id}>{mission.mission_name}</li>
-    ));
+    return <ListGroup.Item>There is No Missions</ListGroup.Item>;
   };
 
   return (
@@ -27,17 +34,21 @@ const ProfilePage = () => {
       <Row>
         <Col>
           <h2>My Rockets</h2>
-          <ul>
-            <li>1</li>
-            <li>2</li>
-            <li>3</li>
-            <li>4</li>
-            <li>5</li>
-          </ul>
+          <ListGroup>
+            {
+              // prettier-ignore
+              reservedRockets && reservedRockets.map((rocket) => (
+                <ListGroup.Item key={rocket.id}>
+                  {rocket.rocket_name}
+                </ListGroup.Item>
+              ))
+            }
+          </ListGroup>
         </Col>
+
         <Col>
           <h2> My Missions </h2>
-          <ul>{getMissions()}</ul>
+          <ListGroup>{getMissions()}</ListGroup>
         </Col>
       </Row>
     </>
