@@ -2,7 +2,7 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Button, Badge } from 'react-bootstrap';
-import { isJoined, isLeft } from '../../redux/missions/missions-slice';
+import { isJoined } from '../../redux/missions/missions-slice';
 
 const MissionItem = (props) => {
   // prettier-ignore
@@ -10,7 +10,7 @@ const MissionItem = (props) => {
     id,
     name,
     description,
-    status
+    status,
   } = props;
 
   const dispatch = useDispatch();
@@ -20,19 +20,19 @@ const MissionItem = (props) => {
   };
 
   const leaveClickHandler = () => {
-    dispatch(isLeft(id));
+    dispatch(isJoined(id));
   };
+
+  const badge = status
+    ? { style: 'primary', text: 'Active Member' }
+    : { style: 'secondary', text: 'Not A Member' };
 
   return (
     <tr>
       <td style={{ width: '10%' }}>{name}</td>
       <td style={{ width: '60%' }}>{description}</td>
       <td className="text-center" style={{ width: '15%' }}>
-        {!status ? (
-          <Badge bg="secondary">Not A Member</Badge>
-        ) : (
-          <Badge bg="primary">Active Member</Badge>
-        )}
+        <Badge bg={badge.style}>{badge.text}</Badge>
       </td>
       <td className="text-center" style={{ width: '15%' }}>
         {!status ? (
