@@ -18,6 +18,7 @@ const RocketCard = ({ props }) => {
   const handleClick = () => {
     dispatch(bookARocketOrCancel(id));
   };
+
   return (
     <Card>
       <div className="row">
@@ -46,13 +47,28 @@ const RocketCard = ({ props }) => {
   );
 };
 
+RocketCard.defaultProps = {
+  props: {},
+  id: 0,
+  flickr_images: [],
+  description: '',
+  rocket_name: '',
+  reserved: false,
+};
+
 RocketCard.propTypes = {
-  props: PropTypes.objectOf.isRequired,
-  id: PropTypes.string.isRequired,
-  flickr_images: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
-  rocket_name: PropTypes.string.isRequired,
-  reserved: PropTypes.bool.isRequired,
+  props: PropTypes.shape({
+    id: PropTypes.number,
+    flickr_images: PropTypes.arrayOf(PropTypes.string),
+    description: PropTypes.string,
+    rocket_name: PropTypes.string,
+    reserved: PropTypes.bool,
+  }),
+  id: PropTypes.number,
+  flickr_images: PropTypes.arrayOf(PropTypes.string),
+  description: PropTypes.string,
+  rocket_name: PropTypes.string,
+  reserved: PropTypes.bool,
 };
 
 export default RocketCard;

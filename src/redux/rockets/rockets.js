@@ -24,9 +24,12 @@ export const rocketSlice = createSlice({
         ? { ...rocket, reserved: !rocket.reserved }
         : rocket));
     },
+    filterReservedRockets(state) {
+      state.filtered = state.rocketsData.filter((rocket) => rocket.reserved);
+    },
   },
 });
 
-export const { initRockets, bookARocketOrCancel } = rocketSlice.actions;
+export const { initRockets, bookARocketOrCancel, filterReservedRockets } = rocketSlice.actions;
 
 export default rocketSlice.reducer;
