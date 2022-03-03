@@ -1,6 +1,6 @@
 import { Badge, Card } from 'react-bootstrap';
 import PropTypes from 'prop-types';
-import CancelButton from '../rockets/CancelButton';
+import CancelButton from './CancelButton';
 
 const RocketCard = ({ props }) => {
   // prettier-ignore
@@ -21,7 +21,9 @@ const RocketCard = ({ props }) => {
         <div className="col-lg-8 col-xl-9">
           <Card.Body>
             <Card.Title>
-              {reserved && <Badge bg="info">Reserved</Badge>} {rocket_name}
+              {reserved && <Badge bg="info">Reserved</Badge>}
+              &nbsp;
+              {rocket_name}
             </Card.Title>
             <Card.Text style={{ maxHeight: '221px', overflow: 'auto' }}>
               {description}

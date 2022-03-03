@@ -15,9 +15,7 @@ const MainHeader = () => (
 
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
-
         <Nav className="ms-auto">
-
           <LinkContainer to="/" style={{ cursor: 'pointer' }}>
             <span className="nav-link fs-5">Rockets</span>
           </LinkContainer>
@@ -27,9 +25,7 @@ const MainHeader = () => (
           <LinkContainer to="/profile" style={{ cursor: 'pointer' }}>
             <span className="nav-link fs-5">My Profile</span>
           </LinkContainer>
-
         </Nav>
-
       </Navbar.Collapse>
     </Container>
   </Navbar>

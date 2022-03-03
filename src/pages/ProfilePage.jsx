@@ -1,8 +1,15 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { Row, Col, ListGroup, Button } from 'react-bootstrap';
+// prettier-ignore
+import {
+  Row,
+  Col,
+  ListGroup,
+  Button,
+} from 'react-bootstrap';
 import CancelButton from '../components/rockets/CancelButton';
 import { filterReservedRockets } from '../redux/rockets/rockets';
+import { isJoined } from '../redux/missions/missions-slice';
 
 const ProfilePage = () => {
   const state = useSelector((state) => state);
@@ -23,12 +30,21 @@ const ProfilePage = () => {
       return joinedMissions.map((mission) => (
         <ListGroup.Item
           key={mission.mission_id}
-          style={{ display: 'flex', justifyContent: 'space-between' }}
+          className="d-flex justify-content-between"
         >
           {mission.mission_name}
-          <a href={mission.wikipedia} target="_blank">
-            <Button>Read More</Button>
-          </a>
+
+          <div className="d-flex gap-2">
+            <a href={mission.wikipedia} target="_blank" rel="noreferrer">
+              <Button variant="outline-primary">Read More</Button>
+            </a>
+            <Button
+              variant="outline-danger"
+              onClick={() => dispatch(isJoined(mission.mission_id))}
+            >
+              Cancel Mission
+            </Button>
+          </div>
         </ListGroup.Item>
       ));
     }
@@ -42,15 +58,20 @@ const ProfilePage = () => {
         <ListGroup>
           {
             // prettier-ignore
-            reservedRockets && reservedRockets.map(({id, rocket_name, wikipedia, reserved}) => (
-              <ListGroup.Item key={id} style={{display: 'flex', justifyContent: 'space-between'}}>
-                {rocket_name}  
-                {<div style={{display: "flex", gap: "1rem"}}>
-                  <a href={wikipedia} target="_blank">
+            reservedRockets && reservedRockets.map(({
+              id,
+              rocket_name,
+              wikipedia,
+              reserved,
+            }) => (
+              <ListGroup.Item key={id} className="d-flex justify-content-between">
+                {rocket_name}
+                <div className="d-flex gap-2">
+                  <a href={wikipedia} target="_blank" rel="noreferrer">
                     <Button variant="outline-primary">Read More</Button>
                   </a>
                   <CancelButton dispatch={dispatch} variant="outline-danger" id={id} reserved={reserved}>Cancel reservation</CancelButton>
-                </div>}
+                </div>
               </ListGroup.Item>
             ))
           }
