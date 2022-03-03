@@ -20,8 +20,9 @@ const ProfilePage = () => {
 
     if (joinedMissions.length > 0) {
       return joinedMissions.map((mission) => (
-        <ListGroup.Item key={mission.mission_id}>
+        <ListGroup.Item key={mission.mission_id} style={{display: 'flex', justifyContent: 'space-between'}}>
           {mission.mission_name}
+          <a href={mission.wikipedia} target="_blank"><Button>Read More</Button></a>
         </ListGroup.Item>
       ));
     }
