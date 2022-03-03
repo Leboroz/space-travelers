@@ -4,7 +4,7 @@ import Image from 'react-bootstrap/Image';
 import icon from '../images/planet.png';
 
 const MainHeader = () => (
-  <Navbar bg="light" variant="light">
+  <Navbar bg="light" variant="light" expand="md">
     <Container>
       <LinkContainer to="/" style={{ cursor: 'pointer' }}>
         <figure className="d-flex align-items-center gap-2">
@@ -13,17 +13,24 @@ const MainHeader = () => (
         </figure>
       </LinkContainer>
 
-      <Nav className="ms-auto">
-        <LinkContainer to="/" className="mx-3" style={{ cursor: 'pointer' }}>
-          <span className="nav-link fs-5">Rockets</span>
-        </LinkContainer>
-        <LinkContainer to="/missions" style={{ cursor: 'pointer' }}>
-          <span className="nav-link fs-5">Missions</span>
-        </LinkContainer>
-        <LinkContainer to="/profile" style={{ cursor: 'pointer' }}>
-          <span className="nav-link fs-5">My Profile</span>
-        </LinkContainer>
-      </Nav>
+      <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+      <Navbar.Collapse id="responsive-navbar-nav">
+
+        <Nav className="ms-auto">
+
+          <LinkContainer to="/" style={{ cursor: 'pointer' }}>
+            <span className="nav-link fs-5">Rockets</span>
+          </LinkContainer>
+          <LinkContainer to="/missions" style={{ cursor: 'pointer' }}>
+            <span className="nav-link fs-5">Missions</span>
+          </LinkContainer>
+          <LinkContainer to="/profile" style={{ cursor: 'pointer' }}>
+            <span className="nav-link fs-5">My Profile</span>
+          </LinkContainer>
+
+        </Nav>
+
+      </Navbar.Collapse>
     </Container>
   </Navbar>
 );
