@@ -37,7 +37,7 @@ const ProfilePage = () => {
             // prettier-ignore
             reservedRockets && reservedRockets.map((rocket) => (
               <ListGroup.Item key={rocket.id} style={{display: 'flex', justifyContent: 'space-between'}}>
-                {rocket.rocket_name}  {<a href={rocket.wikipedia} target="_blank"><Button>qqRead More</Button></a>}
+                {rocket.rocket_name}  {<a href={rocket.wikipedia} target="_blank"><Button>Read More</Button></a>}
               </ListGroup.Item>
             ))
           }
