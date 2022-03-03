@@ -29,12 +29,12 @@ const MissionItem = (props) => {
 
   return (
     <tr>
-      <td style={{ width: '10%' }}>{name}</td>
-      <td style={{ width: '60%' }}>{description}</td>
-      <td className="text-center" style={{ width: '15%' }}>
+      <td>{name}</td>
+      <td>{description}</td>
+      <td className="text-center">
         <Badge bg={badge.style}>{badge.text}</Badge>
       </td>
-      <td className="text-center" style={{ width: '15%' }}>
+      <td className="text-center">
         {!status ? (
           <Button variant="outline-primary" onClick={joinClickHandler}>
             Join Mission

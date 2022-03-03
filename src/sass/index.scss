@@ -22,3 +22,69 @@
     transform: scaleX(0.7);
   }
 }
+
+@media (max-width: 768px) {
+  .nav-link.active {
+    &::before {
+      display: none;
+    }
+  }
+}
+
+
+// ************ Start Table Style *************** 
+
+.table tr td:first-child{
+  width: 10%;
+}
+
+.table tr td:nth-child(2){
+  width: 60%;
+}
+
+.table tr td:nth-child(3),
+.table tr td:nth-child(4){
+  width: 15%;
+  vertical-align: middle;
+}
+
+@media (max-width: 768px) {
+
+	.table{
+
+    & > :not(:first-child) {
+      border: none;
+    }
+
+    & thead,
+    & th {
+      display: none;
+    }
+  
+    &,
+    & tbody,
+    & tr,
+    & td {
+      display: block;
+      width: 100% !important;
+    }
+  
+    & tr {
+      margin-bottom: 15px;
+
+      & td {
+        text-align: center;
+
+        &:first-child {
+          font-size: 1.6rem;
+        }
+
+        &:nth-child(2) {
+          text-align: justify;
+        }
+      }
+    }
+	}
+}
+
+// ************ End Table Style *************** 
