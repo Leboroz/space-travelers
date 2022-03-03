@@ -23,6 +23,14 @@
   }
 }
 
+@media (max-width: 768px) {
+  .nav-link.active {
+    &::before {
+      display: none;
+    }
+  }
+}
+
 
 // ************ Start Table Style *************** 
 
