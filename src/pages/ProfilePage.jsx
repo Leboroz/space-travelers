@@ -48,7 +48,7 @@ const ProfilePage = () => {
         </ListGroup.Item>
       ));
     }
-    return <ListGroup.Item>There is No Missions</ListGroup.Item>;
+    return <ListGroup.Item>There are No Missions</ListGroup.Item>;
   };
 
   return (
@@ -58,7 +58,7 @@ const ProfilePage = () => {
         <ListGroup>
           {
             // prettier-ignore
-            reservedRockets && reservedRockets.map(({
+            reservedRockets && reservedRockets.length && reservedRockets.map(({
               id,
               rocket_name,
               wikipedia,
@@ -68,12 +68,14 @@ const ProfilePage = () => {
                 {rocket_name}
                 <div className="d-flex gap-2">
                   <a href={wikipedia} target="_blank" rel="noreferrer">
+
                     <Button variant="outline-primary">Read More</Button>
                   </a>
                   <CancelButton dispatch={dispatch} variant="outline-danger" id={id} reserved={reserved}>Cancel reservation</CancelButton>
                 </div>
               </ListGroup.Item>
             ))
+            || <ListGroup.Item>There are No Rockets</ListGroup.Item>
           }
         </ListGroup>
       </Col>
