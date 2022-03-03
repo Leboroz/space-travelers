@@ -36,11 +36,12 @@ const ProfilePage = () => {
         <ListGroup>
           {
             // prettier-ignore
-            reservedRockets && reservedRockets.map((rocket) => (
+            reservedRockets && reservedRockets.length > 0 && reservedRockets.map((rocket) => (
               <ListGroup.Item key={rocket.id}>
                 {rocket.rocket_name}
               </ListGroup.Item>
             ))
+            || <ListGroup.Item>There is NO Rockets</ListGroup.Item>
           }
         </ListGroup>
       </Col>
