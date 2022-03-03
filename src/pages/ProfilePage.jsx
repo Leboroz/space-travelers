@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Row, Col, ListGroup, Button } from 'react-bootstrap';
+import CancelButton from '../components/rockets/CancelButton';
 import { filterReservedRockets } from '../redux/rockets/rockets';
 
 const ProfilePage = () => {
@@ -11,7 +12,7 @@ const ProfilePage = () => {
 
   useEffect(() => {
     dispatch(filterReservedRockets());
-  }, []);
+  }, [dispatch]);
 
   const reservedRockets = rockets.filtered;
 
@@ -20,9 +21,14 @@ const ProfilePage = () => {
 
     if (joinedMissions.length > 0) {
       return joinedMissions.map((mission) => (
-        <ListGroup.Item key={mission.mission_id} style={{display: 'flex', justifyContent: 'space-between'}}>
+        <ListGroup.Item
+          key={mission.mission_id}
+          style={{ display: 'flex', justifyContent: 'space-between' }}
+        >
           {mission.mission_name}
-          <a href={mission.wikipedia} target="_blank"><Button>Read More</Button></a>
+          <a href={mission.wikipedia} target="_blank">
+            <Button>Read More</Button>
+          </a>
         </ListGroup.Item>
       ));
     }
@@ -36,9 +42,15 @@ const ProfilePage = () => {
         <ListGroup>
           {
             // prettier-ignore
-            reservedRockets && reservedRockets.map((rocket) => (
-              <ListGroup.Item key={rocket.id} style={{display: 'flex', justifyContent: 'space-between'}}>
-                {rocket.rocket_name}  {<a href={rocket.wikipedia} target="_blank"><Button>Read More</Button></a>}
+            reservedRockets && reservedRockets.map(({id, rocket_name, wikipedia, reserved}) => (
+              <ListGroup.Item key={id} style={{display: 'flex', justifyContent: 'space-between'}}>
+                {rocket_name}  
+                {<div style={{display: "flex", gap: "1rem"}}>
+                  <a href={wikipedia} target="_blank">
+                    <Button variant="outline-primary">Read More</Button>
+                  </a>
+                  <CancelButton dispatch={dispatch} variant="outline-danger" id={id} reserved={reserved}>Cancel reservation</CancelButton>
+                </div>}
               </ListGroup.Item>
             ))
           }
