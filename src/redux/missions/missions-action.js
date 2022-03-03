@@ -11,6 +11,7 @@ const getMissionsFromApi = () => async (dispatch) => {
       mission_id: mission.mission_id,
       mission_name: mission.mission_name,
       mission_description: mission.description,
+      wikipedia: mission.wikipedia,
       reserved: false,
     });
   });
