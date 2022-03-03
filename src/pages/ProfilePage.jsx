@@ -32,7 +32,7 @@ const ProfilePage = () => {
         </ListGroup.Item>
       ));
     }
-    return <ListGroup.Item>There is No Missions</ListGroup.Item>;
+    return <ListGroup.Item>There are No Missions</ListGroup.Item>;
   };
 
   return (
@@ -53,7 +53,7 @@ const ProfilePage = () => {
                 </div>}
               </ListGroup.Item>
             ))
-            || <ListGroup.Item>There is NO Rockets</ListGroup.Item>
+            || <ListGroup.Item>There are NO Rockets</ListGroup.Item>
           }
         </ListGroup>
       </Col>
