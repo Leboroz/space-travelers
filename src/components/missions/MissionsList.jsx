@@ -17,7 +17,7 @@ const MissionsList = () => {
   }, [dispatch]);
 
   return (
-    <Table striped bordered hover responsive="md">
+    <Table striped bordered hover>
       <thead>
         <tr>
           <th>Missions</th>
