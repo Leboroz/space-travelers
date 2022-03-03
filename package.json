@@ -62,6 +62,7 @@
     "react-router-dom": "^6.2.1",
     "react-scripts": "5.0.0",
     "redux-logger": "^3.0.6",
+    "sass": "^1.49.9",
     "sort-package-json": "^1.54.0",
     "web-vitals": "^2.1.4"
   },
