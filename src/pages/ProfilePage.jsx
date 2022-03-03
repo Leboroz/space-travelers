@@ -58,7 +58,7 @@ const ProfilePage = () => {
         <ListGroup>
           {
             // prettier-ignore
-            reservedRockets && reservedRockets.length && reservedRockets.map(({
+            (reservedRockets && reservedRockets.length && reservedRockets.map(({
               id,
               rocket_name,
               wikipedia,
@@ -74,8 +74,7 @@ const ProfilePage = () => {
                   <CancelButton dispatch={dispatch} variant="outline-danger" id={id} reserved={reserved}>Cancel reservation</CancelButton>
                 </div>
               </ListGroup.Item>
-            ))
-            || <ListGroup.Item>There are No Rockets</ListGroup.Item>
+            ))) || (<ListGroup.Item>There are No Rockets</ListGroup.Item>)
           }
         </ListGroup>
       </Col>
