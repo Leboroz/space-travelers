@@ -42,7 +42,7 @@ const ProfilePage = () => {
         <ListGroup>
           {
             // prettier-ignore
-            reservedRockets && reservedRockets.map(({id, rocket_name, wikipedia, reserved}) => (
+            reservedRockets && reservedRockets.length && reservedRockets.map(({id, rocket_name, wikipedia, reserved}) => (
               <ListGroup.Item key={id} style={{display: 'flex', justifyContent: 'space-between'}}>
                 {rocket_name}  
                 {<div style={{display: "flex", gap: "1rem"}}>
@@ -53,6 +53,7 @@ const ProfilePage = () => {
                 </div>}
               </ListGroup.Item>
             ))
+            || <ListGroup.Item>There is NO Rockets</ListGroup.Item>
           }
         </ListGroup>
       </Col>
