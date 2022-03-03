@@ -1,13 +1,12 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { Row, Col, ListGroup } from 'react-bootstrap';
+import { Row, Col, ListGroup, Button } from 'react-bootstrap';
 import { filterReservedRockets } from '../redux/rockets/rockets';
 
 const ProfilePage = () => {
   const state = useSelector((state) => state);
   const dispatch = useDispatch();
   const { missions, rockets } = state;
-
   const { missionsData } = missions;
 
   useEffect(() => {
@@ -37,8 +36,8 @@ const ProfilePage = () => {
           {
             // prettier-ignore
             reservedRockets && reservedRockets.map((rocket) => (
-              <ListGroup.Item key={rocket.id}>
-                {rocket.rocket_name}
+              <ListGroup.Item key={rocket.id} style={{display: 'flex', justifyContent: 'space-between'}}>
+                {rocket.rocket_name}  {<a href={rocket.wikipedia} target="_blank"><Button>qqRead More</Button></a>}
               </ListGroup.Item>
             ))
           }
